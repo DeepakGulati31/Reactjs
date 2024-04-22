@@ -35,7 +35,7 @@ useEffect(()=>{
   return (
     <>
     
-      <div className="w-full max-w-xl mx-auto shadow-md rounded-lg px-4 my-8 text-white bg-gray-900 bg-opacity-50">
+      <div className="w-full max-w-xl mx-auto shadow-md rounded-lg px-4 my-8 text-white bg-gray-900 bg-opacity-90">
         <h1 className="text-4xl pt-5">
           {" "}
           <span className="text-4xl underline bg-gradient-to-r from-sky-400 to-cyan-500 bg-clip-text text-transparent ">

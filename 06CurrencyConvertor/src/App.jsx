@@ -41,9 +41,7 @@ function App() {
                             label="From"
                             amount={amount}
                             currencyOptions={options}
-                            onCurrencyChange={(currency)=>
-                              setFrom(amount)
-                            }
+                            onCurrencyChange={(currency)=>setFrom(currency)}
                             selectCurrency={from}
                             onAmountChange={(amount)=> setAmount(amount)}
                         />
@@ -62,9 +60,11 @@ function App() {
                             label="To"
                             amount={convertedAmount}
                             currencyOptions={options}
-                            onCurrencyChange={(currenct)=> setTo(currency)}
+                            onCurrencyChange={(currency)=> setTo(currency)}
                             selectCurrency={to}
                             amountDisable
+                            onAmountChange={(amount)=> setAmount(amount)}
+
                         />
                     </div>
                     <button type="submit" className="w-full bg-black text-white px-4 py-3 rounded-lg">
