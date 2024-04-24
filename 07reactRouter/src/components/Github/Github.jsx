@@ -9,7 +9,7 @@ function Github() {
     //     fetch('https://api.github.com/users/DeepakGulati31')
     //     .then(res=>res.json())
     //     .then(data=>{
-            
+    //         console.log(data)
     //         setData(data)
     //     })
     // },)

@@ -13,7 +13,6 @@ export default function Contact() {
                             <p className="text-normal text-lg sm:text-xl font-medium text-gray-600 mt-2">
                                 Fill in the form to start a conversation
                             </p>
-
                             <div className="flex items-center mt-8 text-gray-600">
                                 <svg
                                     fill="none"
