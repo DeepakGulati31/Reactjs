@@ -61,7 +61,7 @@ function Login() {
                             } 
                             })}
                     />
-                    <Input 
+                    <Input
                         label="Password:"
                         placeholder="Enter your password:"
                         type="password"
