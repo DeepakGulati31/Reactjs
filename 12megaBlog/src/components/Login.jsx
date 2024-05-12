@@ -10,7 +10,7 @@ import { useForm } from 'react-hook-form'
 function Login() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const [register, handleSubmit] = useForm()
+    const {register, handleSubmit} = useForm()
     const [error, setError] = useState("")
 
     const login = async (data) => {
@@ -22,7 +22,7 @@ function Login() {
                 if (userData) dispatch(authLogin(userData));
                 navigate("/")
             }
-        } catch (err) {
+        } catch (error) {
             setError(error.message)
         }
     }
@@ -48,32 +48,33 @@ function Login() {
                 </p>
                 {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
                 <form onSubmit={handleSubmit(login)} className='mt-8'>
-                <div className='space-y-5'>
-                    <Input 
-                        lable="Email:"
-                        placeholder="Enter your email:"
-                        type="email"
-                        {...register("email",{
-                            required:true,
-                            validate:{
-                                 //this is regax : regular expression
-                                matchPattern:(value)=> /^\w+([.-])?\w+)@\w+([.-])?\w+(\.\w{2,3})+$/.test(value)|| "Email address must be a valid address",
-                            } 
+                    <div className='space-y-5'>
+                        <Input
+                            lable="Email:"
+                            placeholder="Enter your email:"
+                            type="email"
+                            {...register("email", {
+                                required: true,
+                                validate: {
+                                    //this is regax : regular expression
+                                    matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                                        "Email address must be a valid address",
+                                }
                             })}
-                    />
-                    <Input
-                        label="Password:"
-                        placeholder="Enter your password:"
-                        type="password"
-                        {...register("password",{
-                            required:true,
-                        })}
-                    />
-                    <Button
-                    type="submit"
-                    className="w-full"
-                    >Sign In</Button>
-                </div>
+                        />
+                        <Input
+                            label="Password:"
+                            placeholder="Enter your password:"
+                            type="password"
+                            {...register("password", {
+                                required: true,
+                            })}
+                        />
+                        <Button
+                            type="submit"
+                            className="w-full"
+                        >Sign In</Button>
+                    </div>
                 </form>
             </div>
         </div>

@@ -10,7 +10,7 @@ function Signup() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [error, setError] = useState("")
-    const [register, handleSubmit] = useForm()
+    const {register, handleSubmit} = useForm()
 
     const signup = async (data) => {
         setError("");
@@ -50,7 +50,7 @@ function Signup() {
                         <Input
                         label="Full Name:"
                         type= "text"
-                        placeHolder="Enter yout=r fullName:"
+                        placeholder="Enter your fullName:"
                         {...register("name",{
                             required:true
                         })}
@@ -58,19 +58,19 @@ function Signup() {
                         <Input 
                         label="Email:"
                         type="email"
-                        placeHolder="Enter your email:"
+                        placeholder="Enter your email:"
                         {...register("email",{
                             required:true,
                             validate:{
                                 //this is regax : regular expression
-                                matchPattern:(value)=> /^\w+([.-])?\w+)@\w+([.-])?\w+(\.\w{2,3})+$/.test(value)|| "Email address must be a valid address",
+                                matchPattern:(value)=> /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value)|| "Email address must be a valid address",
                             } 
                         })}
                         />
                         <Input 
                         label="Password:"
                         type="password"
-                        placeHolder="Enter your password"
+                        placeholder="Enter your password"
                         {...register("password",{
                             require:true
                         })}
